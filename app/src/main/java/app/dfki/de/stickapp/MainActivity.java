@@ -1,54 +1,48 @@
 package app.dfki.de.stickapp;
 
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import app.dfki.de.stickapp.adapter.RecyclerViewAdapter;
-import app.dfki.de.stickapp.colorpicker.ColorPicker;
-import app.dfki.de.stickapp.connect.CommandSender;
 import app.dfki.de.stickapp.data.ColorData;
+import app.dfki.de.stickapp.fragments.ColorFragment;
+import app.dfki.de.stickapp.tablayoutadapter.ViewPagerAdapter;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    public TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        List<String> colorItemList = new ArrayList<>(Arrays.asList(ColorData.COLORITEMS));
-
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(linearLayoutManager);
-
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(colorItemList);
-        recyclerView.setAdapter(adapter);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbar);
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), this);
 
+        for(int i = 0; i< ColorData.COLORITEMS.length; i++)
+        {
+            ColorFragment colorFragment = new ColorFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("prefix", "Color" + ColorData.COLORITEMS[i] + "-");
+            colorFragment.setArguments(bundle);
+            viewPagerAdapter.addFragments(colorFragment, ColorData.COLORITEMS[i]);
+        }
+
+        viewPager.setAdapter(viewPagerAdapter);
+        tabLayout.setupWithViewPager(viewPager);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

@@ -1,4 +1,4 @@
-package app.dfki.de.stickapp.adapter;
+package app.dfki.de.stickapp.recyclerviewadapter;
 
 import android.content.Context;
 import android.content.Intent;
