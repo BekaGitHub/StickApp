@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">StickApp</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!--Navigationmenu Stuff-->
+    <string name="color">Color</string>
+    <string name="emotion">Emotion</string>
+    <string name="gesture">Gesture</string>
+    <string name="head">Head</string>
+    <string name="environment">Environment</string>
+    <string name="idle_section">Idle Section</string>
+    <string name="posture">Posture</string>
+    <string name="background">Background</string>
+    <string name="rotation">Rotation</string>
+
+    <string name="apply">Apply</string>
+</resources>
