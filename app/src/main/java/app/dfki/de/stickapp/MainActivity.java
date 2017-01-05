@@ -1,7 +1,6 @@
 package app.dfki.de.stickapp;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -11,16 +10,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import app.dfki.de.stickapp.fragments.ColorFragment;
-import app.dfki.de.stickapp.fragments.ColorHeadFragment;
-import app.dfki.de.stickapp.fragments.ColorMainFragment;
 import app.dfki.de.stickapp.fragments.Muster1Fragment;
-import app.dfki.de.stickapp.fragments.MusterFragment;
-import app.dfki.de.stickapp.util.Utility;
+import app.dfki.de.stickapp.fragments.TransparentyFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    private  ColorMainFragment colorMainFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +33,10 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Utility.fillFragmentList();
-
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.frame, new ColorFragment())
                 .commit();
-        Utility.currentFragmentPosition = 0;
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -55,7 +46,6 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_color) {
-            Utility.currentFragmentPosition = 0;
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.frame, new ColorFragment())
@@ -64,7 +54,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_emotion) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.frame, new Muster1Fragment())
+                    .replace(R.id.frame, new TransparentyFragment())
                     .commit();
 
         } else if (id == R.id.nav_gesture) {
