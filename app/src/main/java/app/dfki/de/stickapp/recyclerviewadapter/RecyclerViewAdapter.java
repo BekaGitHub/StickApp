@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import app.dfki.de.stickapp.coloractivitys.ColorActivity;
 import app.dfki.de.stickapp.R;
 
 /**
@@ -42,7 +41,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switchItems(String.valueOf(holder.colorItemName.getText()));
+                //switchItems(String.valueOf(holder.colorItemName.getText()));
             }
         });
     }
@@ -63,57 +62,57 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         }
     }
 
-    private void switchItems(String item)
+    /*private void switchItems(String item)
     {
         Intent intent;
 
         switch (item)
         {
             case "Head":
-                intent = new Intent(context, ColorActivity.class);
+                intent = new Intent(context, EmotionActyvity.class);
                 intent.putExtra("bodyPart", "ColorHead");
                 context.startActivity(intent);
                 break;
             case "Hair":
-                intent = new Intent(context, ColorActivity.class);
+                intent = new Intent(context, EmotionActyvity.class);
                 intent.putExtra("bodyPart", "ColorHair");
                 context.startActivity(intent);
                 break;
             case "Body":
-                intent = new Intent(context, ColorActivity.class);
+                intent = new Intent(context, EmotionActyvity.class);
                 intent.putExtra("bodyPart", "ColorBody");
                 context.startActivity(intent);
                 break;
             case "Limbs":
-                intent = new Intent(context, ColorActivity.class);
+                intent = new Intent(context, EmotionActyvity.class);
                 intent.putExtra("bodyPart", "ColorLimbs");
                 context.startActivity(intent);
                 break;
             case "Shoes":
-                intent = new Intent(context, ColorActivity.class);
+                intent = new Intent(context, EmotionActyvity.class);
                 intent.putExtra("bodyPart", "ColorShoes");
                 context.startActivity(intent);
                 break;
             case "Lips":
-                intent = new Intent(context, ColorActivity.class);
+                intent = new Intent(context, EmotionActyvity.class);
                 intent.putExtra("bodyPart", "ColorLips");
                 context.startActivity(intent);
                 break;
             case "Eye":
-                intent = new Intent(context, ColorActivity.class);
+                intent = new Intent(context, EmotionActyvity.class);
                 intent.putExtra("bodyPart", "ColorEye");
                 context.startActivity(intent);
                 break;
             case "Brow":
-                intent = new Intent(context, ColorActivity.class);
+                intent = new Intent(context, EmotionActyvity.class);
                 intent.putExtra("bodyPart", "ColorBrow");
                 context.startActivity(intent);
                 break;
             case "Nose":
-                intent = new Intent(context, ColorActivity.class);
+                intent = new Intent(context, EmotionActyvity.class);
                 intent.putExtra("bodyPart", "ColorNose");
                 context.startActivity(intent);
                 break;
         }
-    }
+    }*/
 }

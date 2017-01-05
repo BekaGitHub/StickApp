@@ -15,6 +15,7 @@ import java.net.Socket;
 public class TcpClient {
     //Mein PC 192.168.2.101
     //Für Emulator 10.0.2.2
+    //hiz guest and saarland 134.96.79.69
     private static final String SERVER_IP = "192.168.2.101"; //your computer IP address
     private static final int SERVER_PORT = 64000;
 

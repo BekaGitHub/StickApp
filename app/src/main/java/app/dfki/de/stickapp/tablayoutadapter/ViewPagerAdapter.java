@@ -17,12 +17,12 @@ public class ViewPagerAdapter extends FragmentPagerAdapter{
 
     List<Fragment> fragments = new ArrayList<>();
     List<String> tabTitels = new ArrayList<>();
-    Context context;
 
-    public ViewPagerAdapter(FragmentManager fm, Context context) {
+    public ViewPagerAdapter(FragmentManager fm, List<Fragment> fragments, List<String> tabs) {
 
         super(fm);
-        this.context = context;
+        this.fragments = fragments;
+        this.tabTitels = tabs;
     }
 
     @Override

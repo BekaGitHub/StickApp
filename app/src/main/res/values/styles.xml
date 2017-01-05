@@ -13,8 +13,9 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="myTabStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
-        <item name="android:textSize">20dp</item>
+    <style name="ToggleButtonStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">25dp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>

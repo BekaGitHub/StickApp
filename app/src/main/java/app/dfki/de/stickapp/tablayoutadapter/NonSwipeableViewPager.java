@@ -1,4 +1,4 @@
-package app.dfki.de.stickapp;
+package app.dfki.de.stickapp.tablayoutadapter;
 
 
 import android.content.Context;
