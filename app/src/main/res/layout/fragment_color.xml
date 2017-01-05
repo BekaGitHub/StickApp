@@ -6,15 +6,6 @@
     tools:context="app.dfki.de.stickapp.fragments.ColorFragment"
     android:id="@+id/framelayout">
 
-    <Button
-        android:id="@+id/fragmentColorAppyButton"
-        android:text="@string/apply"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
     <app.dfki.de.stickapp.colorpicker.ColorPicker
         android:id="@+id/fragmentColorPicker"
         android:layout_width="wrap_content"
@@ -146,13 +137,25 @@
     </LinearLayout>
 
     <Button
-        android:text="Button"
+        android:id="@+id/fragmentColorAppyButton"
+        android:text="@string/apply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginRight="99dp"
+        android:layout_marginEnd="99dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonReset"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/fragmentColorAppyButton"
-        android:layout_toStartOf="@+id/fragmentColorAppyButton"
-        android:id="@+id/button" />
+        android:layout_toStartOf="@+id/fragmentColorAppyButton" />
 
 
 </RelativeLayout>

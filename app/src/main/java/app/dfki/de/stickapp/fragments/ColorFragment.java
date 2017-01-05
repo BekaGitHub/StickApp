@@ -22,7 +22,7 @@ public class ColorFragment extends Fragment implements View.OnClickListener{
 
     private ColorPicker colorPicker;
     private Button applyButton;
-    CommandSender sender;
+    private Button resetButton;
 
     ToggleButton buttonShoes;
     ToggleButton buttonLips;
@@ -46,6 +46,7 @@ public class ColorFragment extends Fragment implements View.OnClickListener{
         View view = inflater.inflate(R.layout.fragment_color, container, false);
         colorPicker = (ColorPicker) view.findViewById(R.id.fragmentColorPicker);
         applyButton = (Button) view.findViewById(R.id.fragmentColorAppyButton);
+        resetButton = (Button) view.findViewById(R.id.buttonReset);
 
         //control stuff
          buttonShoes = (ToggleButton) view.findViewById(R.id.toggleButtonShoes);
@@ -89,6 +90,13 @@ public class ColorFragment extends Fragment implements View.OnClickListener{
                     sendCommand("ColorHair");
                 else if(buttonHead.isChecked())
                     sendCommand("ColorHead");
+            }
+        });
+
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendCommand("Reset");
             }
         });
 
