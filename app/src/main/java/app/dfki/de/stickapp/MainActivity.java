@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import app.dfki.de.stickapp.fragments.ColorFragment;
+import app.dfki.de.stickapp.fragments.EmotionFragment;
 import app.dfki.de.stickapp.fragments.Muster1Fragment;
 import app.dfki.de.stickapp.fragments.TransparentyFragment;
 
@@ -51,11 +52,18 @@ public class MainActivity extends AppCompatActivity
                     .replace(R.id.frame, new ColorFragment())
                     .commit();
 
+        }else if (id == R.id.nav_transparany) {
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frame, new TransparentyFragment())
+                        .commit();
+
         } else if (id == R.id.nav_emotion) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.frame, new TransparentyFragment())
+                    .replace(R.id.frame, new EmotionFragment())
                     .commit();
+
 
         } else if (id == R.id.nav_gesture) {
 
