@@ -21,7 +21,7 @@ public class TcpClient {
     private static final String SERVER_IP = "192.168.2.101"; //your computer IP address
     private static final int SERVER_PORT = 64000;
     byte[] sendData;
-    
+
     public void run(String message){
         try {
             //create a socket to make the connection with the server

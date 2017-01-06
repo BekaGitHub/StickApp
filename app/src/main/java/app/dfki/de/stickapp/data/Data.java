@@ -14,4 +14,8 @@ public class Data {
 
     public static final String[] GESTURES = {"Clap", "CoverMouth", "Itching", "NoNoNo", "OneTwoThree",
                                                 "TouchHead", "WaveLeft", "WaveRight"};
+
+    public static final String[] HEAD = {"Blink", "HeadDown", "HeadDown1", "HeadLeft", "HeadRight",
+                                            "HeadShake", "HeadTilt", "LookDown", "LookLeft", "LookRight",
+                                            "LookUp", "Nod", "Nod2", "TiltLeft", "TiltLeftBack"};
 }
