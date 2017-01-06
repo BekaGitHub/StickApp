@@ -1,7 +1,6 @@
-package app.dfki.de.stickapp.recyclerviewadapter;
+package app.dfki.de.stickapp.adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,28 +17,26 @@ import app.dfki.de.stickapp.connect.CommandSender;
  * Created by EmpaT on 02.01.2017.
  */
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ColorViewHolder> {
+public class EmotionRecyclerViewAdapter extends RecyclerView.Adapter<EmotionRecyclerViewAdapter.EmotionViewHolder> {
 
-    private List<String> colorItemList;
-    private Context context;
+    private List<String> emotionItemList;
 
-    public RecyclerViewAdapter(List<String> colorItemList){
+    public EmotionRecyclerViewAdapter(List<String> colorItemList){
 
-        this.colorItemList = colorItemList;
+        this.emotionItemList = colorItemList;
     }
 
     @Override
-    public ColorViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        this.context = parent.getContext();
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclter_item_view, parent, false);
-        ColorViewHolder viewHolder = new ColorViewHolder(view);
+    public EmotionViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.emotion_recyclter_item_view, parent, false);
+        EmotionViewHolder viewHolder = new EmotionViewHolder(view);
 
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(final ColorViewHolder holder, int position) {
-        holder.itemText.setText(colorItemList.get(position));
+    public void onBindViewHolder(final EmotionViewHolder holder, int position) {
+        holder.itemText.setText(emotionItemList.get(position));
         if(position == 0 || position == 1 || position == 2)
             holder.itemImage.setImageResource(R.mipmap.angry);
         else if(position == 3)
@@ -76,15 +73,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public int getItemCount() {
 
-        return colorItemList.size();
+        return emotionItemList.size();
     }
 
-    class ColorViewHolder extends RecyclerView.ViewHolder{
+    class EmotionViewHolder extends RecyclerView.ViewHolder{
          TextView itemText;
          ImageView itemImage;
          View itemView;
 
-         public ColorViewHolder(View itemView) {
+         public EmotionViewHolder(View itemView) {
             super(itemView);
              this.itemView = itemView;
              itemText = (TextView) itemView.findViewById(R.id.recycler_itemText);

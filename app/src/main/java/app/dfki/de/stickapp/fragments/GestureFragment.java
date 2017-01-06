@@ -14,16 +14,16 @@ import java.util.Arrays;
 import java.util.List;
 
 import app.dfki.de.stickapp.R;
+import app.dfki.de.stickapp.adapters.GestureRecyclerViewAdapter;
 import app.dfki.de.stickapp.data.Data;
-import app.dfki.de.stickapp.adapters.EmotionRecyclerViewAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class EmotionFragment extends Fragment {
+public class GestureFragment extends Fragment {
 
 
-    public EmotionFragment() {
+    public GestureFragment() {
         // Required empty public constructor
     }
 
@@ -32,17 +32,16 @@ public class EmotionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_emotion, container, false);
+        View view = inflater.inflate(R.layout.fragment_gesture, container, false);
 
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewGesure);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        List<String> emotionList = new ArrayList<>(Arrays.asList(Data.EMOTIONS));
+        List<String> gestureList = new ArrayList<>(Arrays.asList(Data.GESTURES));
 
-        EmotionRecyclerViewAdapter recyclerViewAdapter = new EmotionRecyclerViewAdapter(emotionList);
-        recyclerView.setAdapter(recyclerViewAdapter);
-
+        GestureRecyclerViewAdapter gestureRecyclerViewAdapter = new GestureRecyclerViewAdapter(gestureList);
+        recyclerView.setAdapter(gestureRecyclerViewAdapter);
 
         return view;
     }
