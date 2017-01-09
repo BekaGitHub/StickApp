@@ -11,6 +11,7 @@ import android.view.MenuItem;
 
 import app.dfki.de.stickapp.fragments.ColorFragment;
 import app.dfki.de.stickapp.fragments.EmotionFragment;
+import app.dfki.de.stickapp.fragments.EnvironmentFragment;
 import app.dfki.de.stickapp.fragments.GestureFragment;
 import app.dfki.de.stickapp.fragments.HeadFragment;
 import app.dfki.de.stickapp.fragments.Muster1Fragment;
@@ -80,6 +81,10 @@ public class MainActivity extends AppCompatActivity
                     .commit();
 
         } else if (id == R.id.nav_environment) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.frame, new EnvironmentFragment())
+                    .commit();
 
         } else if (id == R.id.nav_idle_section) {
 

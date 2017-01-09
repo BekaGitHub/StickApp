@@ -18,4 +18,8 @@ public class Data {
     public static final String[] HEAD = {"Blink", "HeadDown", "HeadDown1", "HeadLeft", "HeadRight",
                                             "HeadShake", "HeadTilt", "LookDown", "LookLeft", "LookRight",
                                             "LookUp", "Nod", "Nod2", "TiltLeft", "TiltLeftBack"};
+
+    public static final String[] ENVIRONMENT = {"DisappearToSmall", "ComeBackFromSmall", "GoDown",
+                                                "ComeUp", "FadeIn", "FadeOut",  "Speaking", "StartBlinking",
+                                                "StopBlinking", "StartBreathing",  "StopBreathing"};
 }
