@@ -1,5 +1,7 @@
 package app.dfki.de.stickapp.data;
 
+import app.dfki.de.stickapp.R;
+
 /**
  * Created by EmpaT on 01.01.2017.
  */
@@ -22,4 +24,7 @@ public class Data {
     public static final String[] ENVIRONMENT = {"DisappearToSmall", "ComeBackFromSmall", "GoDown",
                                                 "ComeUp", "FadeIn", "FadeOut",  "Speaking", "StartBlinking",
                                                 "StopBlinking", "StartBreathing",  "StopBreathing"};
+
+    public static final int[] BACKGROUND = {R.mipmap.bg1, R.mipmap.bg2, R.mipmap.bg3, R.mipmap.bg4,
+                                            R.mipmap.bg5, R.mipmap.bg6};
 }

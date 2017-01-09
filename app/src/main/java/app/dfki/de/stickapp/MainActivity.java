@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import app.dfki.de.stickapp.fragments.BackgroundFragment;
 import app.dfki.de.stickapp.fragments.ColorFragment;
 import app.dfki.de.stickapp.fragments.EmotionFragment;
 import app.dfki.de.stickapp.fragments.EnvironmentFragment;
@@ -91,6 +92,10 @@ public class MainActivity extends AppCompatActivity
         }else if (id == R.id.nav_posture) {
 
         }else if (id == R.id.nav_background) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.frame, new BackgroundFragment())
+                    .commit();
 
         }else if (id == R.id.nav_rotation) {
 
